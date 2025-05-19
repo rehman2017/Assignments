@@ -1,0 +1,27 @@
+#14. Aggregation
+#Assignment:
+#Create a class Department and a class Employee. Use aggregation by having a Department object store a reference to an Employee object that exists independently of it.
+
+
+
+class A:
+    def show(self):
+        print("Show from class A")
+
+class B(A):
+    def show(self):
+        print("Show from class B")
+
+class C(A):
+    def show(self):
+        print("Show from class C")
+
+class D(B, C):  # Diamond Inheritance: D -> B -> C -> A
+    pass
+
+# Example usage:
+obj = D()
+obj.show()  # MRO decides which 'show' method to call
+
+# To view the Method Resolution Order
+print("MRO:", [cls.__name__ for cls in D.__mro__])
