@@ -1,0 +1,22 @@
+#8. The super() Function
+#Assignment:
+#Create a class Person with a constructor that sets the name. Inherit a class Teacher from it, add a subject field, and use super() to call the base class constructor.
+
+class Person:
+    def __init__(self, name):
+        self.name = name
+        print("Person constructor called")
+
+class Teacher(Person):
+    def __init__(self, name, subject):
+        super().__init__(name)       # Call base class constructor
+        self.subject = subject
+        print("Teacher constructor called")
+
+    def display(self):
+        print("Name:", self.name)
+        print("Subject:", self.subject)
+
+# Example usage:
+t = Teacher("Rehman", "Mathematics")
+t.display()
